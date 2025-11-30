@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMOS CANDLE - 마법 같은 자동 점화 캔들</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; padding: 0; }
+        
+        /* 헤더 & 네비게이션 */
+        header { background: #fff; border-bottom: 1px solid #eee; padding: 20px 0; text-align: center; }
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; margin-bottom: 15px; display: block; color: #000; }
+        nav ul { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        nav a { font-size: 14px; color: #555; text-transform: uppercase; }
+        nav a:hover { color: #000; font-weight: bold; }
+
+        /* 메인 히어로 섹션 */
+        .hero { text-align: center; padding: 60px 20px; background-color: #f9f9f9; }
+        .hero h1 { font-size: 28px; font-weight: 300; margin-bottom: 20px; word-break: keep-all; }
+        .hero p { font-size: 16px; color: #666; margin-bottom: 40px; }
+        .hero img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+        /* 브랜드 스토리 섹션 */
+        .story { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .story h2 { font-size: 24px; margin-bottom: 30px; }
+        .infographic { max-width: 100%; margin-top: 30px; }
+
+        /* 판매처 링크 섹션 */
+        .shops { background: #fff; padding: 60px 20px; text-align: center; border-top: 1px solid #eee; }
+        .shops h2 { font-size: 22px; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+        .shop-group { margin-bottom: 40px; }
+        .shop-group h3 { font-size: 16px; color: #888; margin-bottom: 20px; }
+        .shop-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn { padding: 10px 20px; border: 1px solid #ccc; border-radius: 4px; transition: 0.3s; background: #fff; }
+        .btn:hover { background: #333; color: #fff; border-color: #333; }
+
+        /* 푸터 */
+        footer { background: #f4f4f4; padding: 40px 20px; font-size: 12px; color: #777; text-align: center; }
+        footer p { margin: 5px 0; }
+        .social-links { margin-top: 20px; }
+        
+        /* 모바일 최적화 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 22px; }
+            nav ul { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">LUMOS CANDLE</a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://smartstore.naver.com/lumoscandle" target="_blank">Store</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>루모스캔들은 버튼만 누르면<br>실제 불꽃이 점화되는 마법 같은 향초입니다.</h1>
+        <p>더욱 안전하고 편리한 루모스캔들을 경험해보세요.</p>
+        <img src="https://static.wixstatic.com/media/91a17b_0f71353b3872449e9f499b8781f0f830~mv2.png/v1/fill/w_834,h_552,al_c,lg_1,q_90,enc_avif,quality_auto/image.png" alt="Lumos Candle Main">
+    </section>
+
+    <section id="about" class="story">
+        <h2>Magic Candle, Lumos</h2>
+        <p>전세계 최초의 자동 점화 캔들, 루모스를 만나보세요.</p>
+        <img src="https://static.wixstatic.com/media/91a17b_5fac1c1733994684a2cd43ad77ab0cb1~mv2.png/v1/fill/w_800,h_1492,al_c,q_90,enc_avif,quality_auto/infographic.png" alt="Features" class="infographic">
+    </section>
+
+    <section class="shops">
+        <h2>Where you can meet</h2>
+        
+        <div class="shop-group">
+            <h3>South Korea</h3>
+            <div class="shop-links">
+                <a href="https://smartstore.naver.com/lumoscandle" target="_blank" class="btn">네이버 스마트스토어</a>
+                <a href="https://www.funshop.co.kr/goods/detail/55077" target="_blank" class="btn">펀샵 (Funshop)</a>
+                <a href="http://www.10x10.co.kr/street/street_brand_sub06.asp?makerid=lumos1" target="_blank" class="btn">텐바이텐 (10x10)</a>
+            </div>
+        </div>
+
+        <div class="shop-group">
+            <h3>Worldwide</h3>
+            <div class="shop-links">
+                <a href="https://www.indiegogo.com/projects/lumos-candle-world-s-first-auto-ignition-candle" target="_blank" class="btn">Indiegogo</a>
+                <a href="https://www.kmall24.com/products/97003390" target="_blank" class="btn">Kmall24</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p><strong>LUMOS CANDLE Corporation</strong></p>
+        <p>CEO: Kuk-Hyun Han | Tel: 041-852-3300</p>
+        <p>Email: <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
+        <div class="social-links">
+            <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube Channel</a>
+        </div>
+        <br>
+        <p>Copyrightⓒ 2025 LUMOS CANDLE. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
