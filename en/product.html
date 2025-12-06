@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMOS CANDLE - Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
+        .product-card { text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
+        .product-card img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 20px; }
+        .product-card h3 { font-size: 20px; margin-bottom: 10px; }
+        .product-card p { color: #666; font-size: 14px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">LUMOS CANDLE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html" class="active">Product</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="../product.html" class="lang-switch">KOR</a>
+        </header>
+
+        <section>
+            <h2 class="section-title">Our Products</h2>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="https://static.wixstatic.com/media/91a17b_2d6e7b964e4a4cff9ae047133a75f094~mv2.png" alt="Lumos Candle Set">
+                    <h3>Lumos Candle Set</h3>
+                    <p>Main Unit + 2 Refill Candles + Charging Cable</p>
+                    <a href="https://www.indiegogo.com/projects/lumos-candle-world-s-first-auto-ignition-candle" target="_blank" class="btn">Buy on Indiegogo</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://static.wixstatic.com/media/91a17b_f7d5f170691046fca379866f827698de~mv2.png" alt="Refill Candle">
+                    <h3>Refill Candle (4 pcs)</h3>
+                    <p>Eco-friendly Soy Wax Refill Candles</p>
+                    <a href="https://www.kmall24.com/products/97003390" target="_blank" class="btn">Buy on Kmall24</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
