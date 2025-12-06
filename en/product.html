@@ -86,6 +86,11 @@
             <div class="lang-switch-wrap">
                 <a href="../product.html" class="lang-switch">KR</a>
             </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
 
         <section class="product-intro">
@@ -219,5 +224,14 @@
             </div>
         </footer>
     </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
