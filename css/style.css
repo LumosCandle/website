@@ -1,49 +1,184 @@
 @charset "utf-8";
 
-/* 1. 폰트 가져오기 (Montserrat: 로고용 / Noto Sans KR: 본문용) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/* 1. 폰트 가져오기 (Montserrat: 로고/제목용, Noto Sans KR: 본문용) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 /* 2. 기본 설정 */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { 
-    font-family: 'Noto Sans KR', sans-serif; /* 기본은 한글 폰트 */
+    font-family: 'Noto Sans KR', sans-serif; 
     color: #333; 
     line-height: 1.6; 
     letter-spacing: -0.5px; 
+    -webkit-font-smoothing: antialiased; 
 }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; margin: 0 auto; }
 
-/* 3. 로고 전용 스타일 (폰트 변경 & 색상 일치) */
+/* 3. 브랜드 아이덴티티 (전역 설정) */
+.brand-font, .logo, .hero-title, .section-subtitle, .footer-logo-text, .product-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.lumos { color: #FFC000; margin-right: 5px; }
+.candle { color: #000000; }
+
+
+/* 레이아웃 컨테이너 */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; }
+
+/* 헤더 */
+header { 
+    height: 80px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative; 
+}
+
+/* 헤더 로고 */
 .logo { 
-    font-family: 'Montserrat', sans-serif; /* 로고만 영문 전용 폰트 사용 */
-    font-size: 24px; /* 크기 약간 키움 */
-    font-weight: 900; /* 가장 두껍게 */
-    letter-spacing: 1px; /* 자간 조정 */
-    text-transform: uppercase; 
+    font-size: 22px; 
+    letter-spacing: 1px; 
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    z-index: 10;
 }
-.logo .lumos { color: #FFC000; } /* 원본과 동일한 노란색 */
-.logo .candle { color: #000000; } /* 완전한 검정색 */
 
-/* ... (이 아래 nav, header 등 나머지 CSS는 기존과 동일하게 유지) ... */
-/* 혹시 모르니 아래 헤더/푸터 부분도 확실하게 다시 드립니다. */
+/* 메뉴 (중앙 정렬) */
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+nav ul { display: flex; gap: 35px; }
+nav a { 
+    font-size: 13px; 
+    color: #888; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+nav a:hover, nav a.active { color: #333; font-weight: 800; }
 
-header { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; }
-nav ul { display: flex; gap: 40px; }
-nav a { font-size: 13px; color: #999; text-transform: uppercase; font-weight: 500; font-family: 'Montserrat', sans-serif; /* 메뉴도 영문 폰트 적용 */ }
-nav a:hover, nav a.active { color: #333; font-weight: 700; }
-.lang-switch { border: 1px solid #ccc; padding: 4px 12px; font-size: 11px; color: #555; border-radius: 0; font-family: 'Montserrat', sans-serif; }
-
-/* ... (나머지 hero, section 스타일은 그대로 두셔도 됩니다) ... */
-
-/* 푸터 로고 폰트도 일치시키기 */
-.footer-logo-text { 
+/* 언어 스위치 */
+.lang-switch-wrap { z-index: 10; }
+.lang-switch { 
+    border: 1px solid #ddd; 
+    padding: 3px 10px; 
+    font-size: 11px; 
+    color: #666; 
+    border-radius: 0; 
     font-family: 'Montserrat', sans-serif; 
-    font-size: 18px; 
-    font-weight: 900; 
-    letter-spacing: 0.5px; 
-    text-transform: uppercase; 
+    font-weight: 600;
 }
-.footer-logo-text .lumos { color: #FFC000; }
-.footer-logo-text .candle { color: #000000; }
+.lang-switch:hover { border-color: #333; color: #333; }
+
+
+/* 메인 히어로 섹션 */
+.hero { text-align: center; padding: 70px 0 30px; }
+.hero-slogan { font-size: 17px; color: #666; margin-bottom: 8px; font-weight: 500; font-family: 'Montserrat', sans-serif; }
+.hero-title { font-size: 42px; margin-bottom: 40px; letter-spacing: -1px; }
+.hero-img { width: 100%; max-width: 900px; margin-bottom: 50px; }
+.hero-desc { font-size: 16px; color: #555; line-height: 1.8; word-break: keep-all; }
+
+/* 섹션 공통 */
+section { padding: 60px 0; text-align: center; }
+h2.section-title { font-size: 22px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; color: #333; font-weight: 800; font-family: 'Montserrat', sans-serif; }
+.section-subtitle { font-size: 16px; margin-bottom: 50px; letter-spacing: 2px; }
+
+/* Shop Section (Home) */
+.shop-section { border-top: 1px solid #f8f8f8; padding-top: 80px; }
+.shop-category { font-size: 13px; color: #aaa; margin: 40px 0 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+.shop-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+.shop-logos a { display: block; opacity: 0.6; transition: 0.3s; }
+.shop-logos a:hover { opacity: 1; transform: translateY(-3px); }
+.shop-logos img { height: 26px; width: auto; }
+
+/* =========================================
+   [추가됨] Product Page Styles
+   ========================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    margin-top: 40px;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 0; /* 각진 디자인 */
+    transition: 0.3s;
+    text-align: center;
+    background: #fff;
+}
+.product-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+    border-color: #ddd;
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.btn-buy {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #333;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0;
+}
+.btn-buy:hover {
+    background-color: #FFC000;
+    color: #000;
+}
+
+
+/* 푸터 */
+footer { 
+    padding: 70px 0; 
+    text-align: left; 
+    background-color: #fff; 
+    border-top: 2px solid #f5f5f5; 
+    font-size: 11px; 
+    color: #999; 
+    margin-top: 80px; 
+}
+.footer-content { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; }
+.footer-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.footer-logo-text { font-size: 18px; letter-spacing: 1px; line-height: 1; }
+.footer-info p { margin-bottom: 5px; }
+.footer-links { margin-top: 20px; }
+.footer-links a { margin-right: 15px; text-decoration: underline; color: #aaa; }

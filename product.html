@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMOS CANDLE - Product</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-        .product-card { text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
-        .product-card img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 20px; }
-        .product-card h3 { font-size: 20px; margin-bottom: 10px; }
-        .product-card p { color: #666; font-size: 14px; margin-bottom: 20px; }
-    </style>
+    <title>Products - LUMOS CANDLE</title>
+    <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
+
     <div class="container">
         <header>
-            <a href="index.html" class="logo">LUMOS CANDLE</a>
+            <a href="index.html" class="logo">
+                <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+            </a>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -27,29 +23,74 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="en/product.html" class="lang-switch">ENG</a>
+            
+            <div class="lang-switch-wrap">
+                <a href="en/product.html" class="lang-switch">EN</a>
+            </div>
         </header>
 
         <section>
-            <h2 class="section-title">Our Products</h2>
+            <h2 class="section-title">PRODUCTS</h2>
+            <div class="section-subtitle">
+                <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+            </div>
+
             <div class="product-grid">
                 
                 <div class="product-card">
-                    <img src="https://static.wixstatic.com/media/91a17b_2d6e7b964e4a4cff9ae047133a75f094~mv2.png" alt="Lumos Candle Set">
-                    <h3>루모스 캔들 세트</h3>
-                    <p>본체 + 리필 캔들 2개 + 충전 케이블</p>
-                    <a href="https://smartstore.naver.com/lumoscandle" target="_blank" class="btn">구매하기</a>
+                    <img src="https://static.wixstatic.com/media/91a17b_2d6e7b964e4a4cff9ae047133a75f094~mv2.png" alt="Lumos Candle Set" class="product-img">
+                    
+                    <div class="product-info">
+                        <h3 class="brand-font">STARTER SET</h3>
+                        <p>
+                            <strong>루모스 캔들 스타터 세트</strong><br>
+                            본체 + 리필 캔들 2개 + 충전 케이블<br>
+                            버튼 하나로 시작하는 마법 같은 경험
+                        </p>
+                        <a href="https://smartstore.naver.com/lumoscandle" target="_blank" class="btn-buy">Buy Now</a>
+                    </div>
                 </div>
 
                 <div class="product-card">
-                    <img src="https://static.wixstatic.com/media/91a17b_f7d5f170691046fca379866f827698de~mv2.png" alt="Refill Candle">
-                    <h3>리필 캔들 (4개입)</h3>
-                    <p>소이 왁스로 만든 친환경 리필 캔들</p>
-                    <a href="https://smartstore.naver.com/lumoscandle" target="_blank" class="btn">구매하기</a>
+                    <img src="https://static.wixstatic.com/media/91a17b_f7d5f170691046fca379866f827698de~mv2.png" alt="Refill Candle" class="product-img">
+                    
+                    <div class="product-info">
+                        <h3 class="brand-font">REFILL CANDLE</h3>
+                        <p>
+                            <strong>리필 캔들 (4개입)</strong><br>
+                            소이 왁스로 만든 친환경 캔들<br>
+                            경제적이고 안전하게 사용하세요
+                        </p>
+                        <a href="https://smartstore.naver.com/lumoscandle" target="_blank" class="btn-buy">Buy Now</a>
+                    </div>
                 </div>
 
             </div>
         </section>
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <span class="footer-logo-text">
+                        <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+                    </span>
+                </div>
+                
+                <div class="footer-info">
+                    <p><strong>Corporation : LUMOS CANDLE</strong></p>
+                    <p>CEO : Kuk-Hyun Han</p>
+                    <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
+                    <p>Tel : +82-41-852-3300</p>
+                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
