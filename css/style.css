@@ -354,3 +354,30 @@ footer {
     background-color: #FFC000;
     color: #000;
 }
+
+/* ... 기존 코드 아래에 추가 ... */
+
+/* [추가됨] Wix 스타일의 제품 페이지 제목 (이미지 대체용) */
+.wix-title-style {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px; /* 이미지처럼 크게 */
+    font-weight: 900;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* 설명 문구 스타일 (Wix EN 느낌) */
+.wix-desc-style {
+    font-family: 'Noto Sans KR', sans-serif; /* 가독성 위주 */
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: keep-all;
+}

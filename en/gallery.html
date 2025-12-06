@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMOS CANDLE - Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
-        .gallery-item { overflow: hidden; border-radius: 8px; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
-        .gallery-item img:hover { transform: scale(1.05); }
-    </style>
+    <title>Gallery - LUMOS CANDLE</title>
+    <link rel="stylesheet" href="../css/style.css?v=18">
 </head>
 <body>
+
     <div class="container">
         <header>
-            <a href="index.html" class="logo">LUMOS CANDLE</a>
+            <a href="index.html" class="logo">
+                <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+            </a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -26,20 +22,85 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="../gallery.html" class="lang-switch">KOR</a>
+            <div class="lang-switch-wrap">
+                <a href="../gallery.html" class="lang-switch">KR</a>
+            </div>
         </header>
 
-        <section>
-            <h2 class="section-title">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Image+1" alt="Gallery 1"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Image+2" alt="Gallery 2"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Image+3" alt="Gallery 3"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Image+4" alt="Gallery 4"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Image+5" alt="Gallery 5"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Image+6" alt="Gallery 6"></div>
+        <section class="gallery-section" style="padding-top: 40px;">
+            <div class="gallery-title-wrapper" style="margin-bottom: 20px;">
+                <h3 style="font-size: 20px; font-weight: 700; color: #333; margin: 0;">Lumos Candle Video</h3>
+            </div>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/nTRqRxyD-wM" title="Lumos Candle Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
+
+        <section class="gallery-section">
+            <div class="gallery-title-wrapper" style="margin-bottom: 20px;">
+                <h3 style="font-size: 20px; font-weight: 700; color: #333; margin: 0;">Lumos Candle Product Photos</h3>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_fa6040f9262b46529a03897eac4851e9~mv2.png/v1/fill/w_500,h_330,al_c,q_90/Image1.png" alt="Gallery Image 1">
+                </div>
+                
+                <div class="gallery-item video-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_62915d23756f4b7c83cd7d407d51a31c~mv2.gif" alt="Lumos GIF 1">
+                </div>
+                <div class="gallery-item video-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_e9ecb875f00d4737a13548e0755f9fc3~mv2.gif" alt="Lumos GIF 2">
+                </div>
+                <div class="gallery-item video-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_11af1be41d2f4338bce5cd4485fc3f26~mv2.gif" alt="Lumos GIF 3">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_588b2aff0d974a33ae89d32fab6fb537~mv2.png/v1/fill/w_500,h_374,al_c,q_90/Image2.png" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_61815c15f13a4fa3951a7135089c8d0b~mv2.png/v1/fill/w_500,h_374,al_c,q_90/Image3.png" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_16429172679f4cdf83fa6d888cc4587e~mv2.png/v1/fill/w_500,h_374,al_c,q_90/Image4.png" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_57eae86e1b3b400086f7008f61b55b48~mv2_d_2592_1728_s_2.jpg/v1/fill/w_500,h_332,al_c,q_90/Image5.jpg" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_a8d542eb1dee4eb7bae1ca3c2b990aa6~mv2.png/v1/fill/w_500,h_374,al_c,q_90/Image6.png" alt="Gallery Image 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://static.wixstatic.com/media/91a17b_8686d89a1a034dcb9f3a281da187a1a9~mv2_d_1500_1212_s_2.png/v1/fill/w_500,h_404,al_c,q_90/Image7.png" alt="Gallery Image 7">
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <img src="../images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <span class="footer-logo-text">
+                        <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+                    </span>
+                </div>
+                
+                <div class="footer-info">
+                    <p><strong>Corporation : LUMOS CANDLE</strong></p>
+                    <p>CEO : Kuk-Hyun Han</p>
+                    <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
+                    <p>Tel : +82-41-852-3300</p>
+                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

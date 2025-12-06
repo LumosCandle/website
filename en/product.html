@@ -3,53 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMOS CANDLE - Products</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Products - LUMOS CANDLE</title>
+    <link rel="stylesheet" href="../css/style.css?v=21">
     <style>
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px; }
-        .product-card { text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
-        .product-card img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 20px; }
-        .product-card h3 { font-size: 20px; margin-bottom: 10px; }
-        .product-card p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        /* KO 페이지와 동일한 스타일 적용 */
+        .product-intro { text-align: center; margin-bottom: 80px; }
+        .product-intro h2 { font-size: 28px; margin-bottom: 20px; font-weight: 700; color: #333; word-break: keep-all; }
+        .product-intro h3 { font-size: 20px; color: #666; font-weight: 400; margin-bottom: 40px; font-family: 'Montserrat', sans-serif; }
+        
+        .feature-section { margin-bottom: 100px; text-align: center; }
+        .feature-gif { max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 0 auto 30px; }
+        .feature-desc { font-size: 18px; line-height: 1.8; color: #555; max-width: 800px; margin: 0 auto; word-break: keep-all; }
+        .feature-desc h3 { font-size: 24px; color: #333; margin-bottom: 20px; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        
+        .scent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+        .cert-marks { display: flex; justify-content: center; gap: 30px; align-items: center; margin: 60px 0; flex-wrap: wrap; }
+        .cert-marks img { height: 60px; width: auto; }
+
+        .btn-download {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 50px;
+            margin-top: 40px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-download:hover { background-color: #FFC000; color: #000; transform: translateY(-3px); }
     </style>
 </head>
 <body>
+
     <div class="container">
         <header>
-            <a href="index.html" class="logo">LUMOS CANDLE</a>
+            <a href="./index.html" class="logo">
+                <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+            </a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html" class="active">Product</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./product.html" class="active">Product</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <a href="../product.html" class="lang-switch">KOR</a>
+            <div class="lang-switch-wrap">
+                <a href="../product.html" class="lang-switch">KR</a>
+            </div>
         </header>
 
-        <section>
-            <h2 class="section-title">Our Products</h2>
-            <div class="product-grid">
-                
-                <div class="product-card">
-                    <img src="https://static.wixstatic.com/media/91a17b_2d6e7b964e4a4cff9ae047133a75f094~mv2.png" alt="Lumos Candle Set">
-                    <h3>Lumos Candle Set</h3>
-                    <p>Main Unit + 2 Refill Candles + Charging Cable</p>
-                    <a href="https://www.indiegogo.com/projects/lumos-candle-world-s-first-auto-ignition-candle" target="_blank" class="btn">Buy on Indiegogo</a>
-                </div>
+        <section class="product-intro" style="padding-top: 40px;">
+            <h2>Magic happens at the touch of a button.</h2>
+            <h3>For your better and safer life, LUMOS CANDLE</h3>
+            
+            <img src="https://static.wixstatic.com/media/91a17b_a6070f048b4b4c47906a6489bda56165~mv2.gif" alt="Auto Ignition GIF" style="max-width: 800px; width:100%; border-radius:15px;">
+        </section>
 
-                <div class="product-card">
-                    <img src="https://static.wixstatic.com/media/91a17b_f7d5f170691046fca379866f827698de~mv2.png" alt="Refill Candle">
-                    <h3>Refill Candle (4 pcs)</h3>
-                    <p>Eco-friendly Soy Wax Refill Candles</p>
-                    <a href="https://www.kmall24.com/products/97003390" target="_blank" class="btn">Buy on Kmall24</a>
-                </div>
+        <section class="feature-section">
+            <div class="feature-desc">
+                <h3>1. Easy & Safe usage</h3>
+                <p>Lumos Candle uses soy wax and a wood wick.<br>Experience the world's first auto-ignition candle 'Lumos Candle'.</p>
+            </div>
+            <br>
+            <img src="https://static.wixstatic.com/media/91a17b_89fc9d686b41465f8b75cf4d702d56b6~mv2.gif" alt="Cafe Ignition" class="feature-gif" style="max-width: 600px;">
+        </section>
 
+        <section class="feature-section">
+            <div class="feature-desc">
+                <h3>2. NO Paraffin</h3>
+                <p>Lumos Candle does not use paraffin wax.<br>We use only premium US soy wax.</p>
+            </div>
+            <br>
+            <img src="https://static.wixstatic.com/media/91a17b_8b9a25bb53b14ef4b87ec4aaa8092c51~mv2.gif" alt="No Paraffin" class="feature-gif" style="max-width: 600px;">
+        </section>
+
+        <section class="feature-section">
+            <div class="feature-desc">
+                <h3>3. Easy charging type</h3>
+                <p>You don't need to buy a gas lighter or a new ignition tool anymore.<br>Since the battery is built into the pad, you can easily charge it using a USB charger.<br>When fully charged once, it can be used for more than 4 months.</p>
+            </div>
+            <br>
+            <img src="https://static.wixstatic.com/media/91a17b_385cea90d32e4193b1d0902d96206192~mv2.gif" alt="Charging" class="feature-gif" style="max-width: 600px;">
+        </section>
+
+        <section class="feature-section">
+            <div class="feature-desc">
+                <h3>4. Easy refill replacement</h3>
+                <p>If you used up all the refill candles or wanted a new scent, simply replace the refill candle right away.<br>Enjoy a colorful candle life with more than 7 different scents.</p>
+            </div>
+            <br>
+            <img src="https://static.wixstatic.com/media/91a17b_e7ae24c353e14ffcb5345952ff4d5c8c~mv2.gif" alt="Refill" class="feature-gif" style="max-width: 600px;">
+        </section>
+
+        <section class="feature-section">
+            <div class="feature-desc">
+                <h3>5. Safe Design</h3>
+                <p>Lumos Candle is designed to minimize shaking.<br>The refill candle is securely attached to the pad and is safe for general shaking.</p>
+            </div>
+            <br>
+            <img src="https://static.wixstatic.com/media/91a17b_dc871783eaf542bd846fbf870f184dca~mv2.gif" alt="Safe Design" class="feature-gif" style="max-width: 600px;">
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 50px 0;">
+
+        <section class="feature-section">
+            <h2 style="font-family:'Montserrat', sans-serif; font-weight:900; font-size:28px; margin-bottom:40px;">FEATURES DETAIL</h2>
+            
+            <div style="margin-bottom: 80px;">
+                <h3>1. Easy & Safe usage</h3>
+                <p style="color:#666; margin-bottom:20px;">Anyone can use it easily and safely.</p>
+                <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                    <img src="https://static.wixstatic.com/media/91a17b_d40fc215d80f4d24856279532010e2a2~mv2.gif" style="max-width:300px; border-radius:10px;">
+                    <img src="https://static.wixstatic.com/media/91a17b_857b459cd2e045ebab36a444bed30776~mv2.png/v1/crop/x_0,y_2,w_883,h_662/fill/w_411,h_300,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_3822_1.png" style="max-width:300px; border-radius:10px;">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 80px;">
+                <h3>2. NO Paraffin</h3>
+                <p style="color:#666; margin-bottom:20px;">We use only premium US soy wax.</p>
+                <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                    <img src="https://static.wixstatic.com/media/91a17b_360084ecde9c415eb931a06a13f217f6~mv2.png/v1/fill/w_400,h_228,al_c,lg_1,q_90,enc_avif,quality_auto/%EB%A6%AC%ED%95%84%EC%B4%88.png" style="border-radius:10px;">
+                    <img src="https://static.wixstatic.com/media/91a17b_e6e097b6c9ac4938bb402177bb751601~mv2.png/v1/fill/w_400,h_228,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%86%8C%EC%9D%B4%EC%99%81%EC%8A%A4.png" style="border-radius:10px;">
+                </div>
+            </div>
+
+            <div style="margin-bottom: 80px;">
+                <h3>3. Easy charging type</h3>
+                <p style="color:#666; margin-bottom:20px;">USB rechargeable. Lasts over 4 months on a single charge.</p>
+                <img src="https://static.wixstatic.com/media/91a17b_385cea90d32e4193b1d0902d96206192~mv2.gif" style="max-width:600px; margin:0 auto; border-radius:10px;">
+            </div>
+
+            <div style="margin-bottom: 80px;">
+                <h3>4. Easy refill replacement</h3>
+                <p style="color:#666; margin-bottom:20px;">Enjoy various scents for your colorful candle life.</p>
+                <img src="https://static.wixstatic.com/media/91a17b_e7ae24c353e14ffcb5345952ff4d5c8c~mv2.gif" style="max-width:600px; margin:0 auto; border-radius:10px;">
+            </div>
+
+            <div style="margin-bottom: 80px;">
+                <h3>5. Safe Design</h3>
+                <p style="color:#666; margin-bottom:20px;">Designed to minimize shaking and ensure stability.</p>
+                <img src="https://static.wixstatic.com/media/91a17b_dc871783eaf542bd846fbf870f184dca~mv2.gif" style="max-width:600px; margin:0 auto; border-radius:10px;">
             </div>
         </section>
+
+        <section style="background-color:#fafafa; padding: 60px 20px;">
+            <h2 style="font-family:'Montserrat', sans-serif; font-weight:900; font-size:28px; margin-bottom:30px;">SCENTS</h2>
+            
+            <div class="scent-grid">
+                <img src="https://static.wixstatic.com/media/91a17b_c46a9bd6fef94719b9fd422dc1c0f8b3~mv2.png/v1/fill/w_600,h_488,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%9D%B8%EB%94%94%EA%B3%A0%EA%B3%A0_%ED%96%A5_%EB%8C%80%EC%A7%80%201%20%EC%82%AC%EB%B3%B8.png" alt="Scent 1">
+                <img src="https://static.wixstatic.com/media/91a17b_85bc99b338f54528984cf43f23eba9a4~mv2.png/v1/fill/w_600,h_488,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%9D%B8%EB%94%94%EA%B3%A0%EA%B3%A0_%ED%96%A5_%EB%8C%80%EC%A7%80%201.png" alt="Scent 2">
+                <img src="https://static.wixstatic.com/media/91a17b_c5fe409165ed430a9fb1816fbe7c162b~mv2.png/v1/fill/w_600,h_488,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%9D%B8%EB%94%94%EA%B3%A0%EA%B3%A0_%ED%96%A5_%EB%8C%80%EC%A7%80%201%20%EC%82%AC%EB%B3%B8%205.png" alt="Scent 3">
+                <img src="https://static.wixstatic.com/media/91a17b_a7e06c5ad100432194c40189cb4a3252~mv2.png/v1/fill/w_600,h_488,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%EC%9D%B8%EB%94%94%EA%B3%A0%EA%B3%A0_%ED%96%A5.png" alt="Scent 4">
+            </div>
+        </section>
+
+        <section>
+            <div class="cert-marks">
+                <img src="https://static.wixstatic.com/media/91a17b_090ae0fc4dd94d4ca2efe0cfda0d5f17~mv2.png/v1/crop/x_0,y_133,w_305,h_416/fill/w_84,h_104,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/256CBE4A589D8C8113.png" alt="KC">
+                <img src="https://static.wixstatic.com/media/91a17b_e8959656578e4fff9bd61e7f8d07c302~mv2.png/v1/fill/w_136,h_108,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/220px-FCC_New_Logo_svg.png" alt="FCC">
+                <img src="https://static.wixstatic.com/media/91a17b_327d78de7d434153be96973960325d71~mv2.png/v1/fill/w_156,h_108,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/200px-Conformit%C3%A9_Europ%C3%A9enne_(logo)_svg_p.png" alt="CE">
+                <img src="https://static.wixstatic.com/media/91a17b_a57f43860bbd4d4685ef8d054cdc2e34~mv2.jpg/v1/crop/x_223,y_97,w_446,h_225/fill/w_340,h_168,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/CE-Rohs-670x446.jpg" alt="RoHS">
+            </div>
+
+            <a href="https://d04e56b3-a860-499d-ac66-308986be7d0a.filesusr.com/ugd/91a17b_7841b99ddee7401097e4911050bfccea.pdf" target="_blank" class="btn-download">Learn more about Lumos Candle (PDF)</a>
+        </section>
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <img src="../images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <span class="footer-logo-text">
+                        <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+                    </span>
+                </div>
+                
+                <div class="footer-info">
+                    <p><strong>Corporation : LUMOS CANDLE</strong></p>
+                    <p>CEO : Kuk-Hyun Han</p>
+                    <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
+                    <p>Tel : +82-41-852-3300</p>
+                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

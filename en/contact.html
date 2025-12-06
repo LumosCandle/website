@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMOS CANDLE - Contact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Contact - LUMOS CANDLE</title>
+    <link rel="stylesheet" href="../css/style.css?v=18">
 </head>
 <body>
+
     <div class="container">
         <header>
-            <a href="index.html" class="logo">LUMOS CANDLE</a>
+            <a href="index.html" class="logo">
+                <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+            </a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -20,22 +22,55 @@
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
-            <a href="../contact.html" class="lang-switch">KOR</a>
+            <div class="lang-switch-wrap">
+                <a href="../contact.html" class="lang-switch">KR</a>
+            </div>
         </header>
 
-        <section>
-            <h2 class="section-title">Contact Us</h2>
-            <div style="margin-bottom: 40px;">
-                <p><strong>LUMOS CANDLE Corp.</strong></p>
-                <p>Gongju-si, Chungcheongnam-do, Republic of Korea</p>
-                <p>Email: lumos@lumoscandle.com</p>
-                <p>Tel: +82-41-852-3300</p>
-            </div>
+        <section class="contact-section" style="padding-top: 40px;">
+            <p style="margin-bottom: 20px; font-weight: bold; font-size: 18px;">Send us a message</p>
             
-            <div style="background:#eee; height:300px; line-height:300px; color:#888;">
-                Map or Building Image Area
-            </div>
+            <form action="https://formspree.io/f/mldqlvga" method="POST" class="contact-form">
+                
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Message" required></textarea>
+
+                <button type="submit" class="btn-send">Send</button>
+            </form>
         </section>
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <img src="../images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <span class="footer-logo-text">
+                        <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+                    </span>
+                </div>
+                
+                <div class="footer-info">
+                    <p><strong>Corporation : LUMOS CANDLE</strong></p>
+                    <p>CEO : Kuk-Hyun Han</p>
+                    <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
+                    <p>Tel : +82-41-852-3300</p>
+                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="../privacy.html">Privacy Policy</a>
+                    <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
