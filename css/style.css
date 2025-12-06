@@ -182,3 +182,120 @@ footer {
 .footer-info p { margin-bottom: 5px; }
 .footer-links { margin-top: 20px; }
 .footer-links a { margin-right: 15px; text-decoration: underline; color: #aaa; }
+
+/* =========================================
+   [수정됨] Gallery Page Styles
+   ========================================= */
+   .gallery-section { 
+    text-align: center; 
+    margin-bottom: 80px; 
+    padding: 0 20px;
+}
+
+/* 갤러리 제목 스타일 (가운데 정렬) */
+.gallery-title-wrapper {
+    text-align: center; /* 가운데 정렬로 변경 */
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+/* 제목 폰트 */
+.gallery-title-wrapper h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    /* Wix 느낌을 위해 위아래 장식선이 필요하면 여기에 추가 가능 */
+}
+
+/* 그리드 스타일 (기존 유지) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: #fff;
+    height: 250px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+
+.gallery-item:hover { transform: translateY(-3px); }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 비디오 컨테이너 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; 
+    margin: 0 auto 50px;
+    background: #000;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%; border: 0;
+}
+
+/* =========================================
+   [추가됨] FAQ Page Styles
+   ========================================= */
+   .faq-section {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: left; /* 질문/답변은 왼쪽 정렬 */
+    padding: 0 20px;
+}
+
+.faq-category-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #eebb4d; /* 브랜드 컬러 */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 30px;
+}
+
+.faq-question {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+.faq-question .q-mark {
+    color: #eebb4d;
+    margin-right: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.faq-answer {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    padding-left: 25px; /* Q 마크만큼 들여쓰기 */
+    word-break: keep-all;
+}
