@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - LUMOS CANDLE</title>
-    <link rel="stylesheet" href="css/style.css?v=14">
+    <link rel="stylesheet" href="css/style.css?v=26">
 </head>
 <body>
 
@@ -13,6 +13,7 @@
             <a href="index.html" class="logo">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </a>
+            
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -25,6 +26,7 @@
             <div class="lang-switch-wrap">
                 <a href="en/faq.html" class="lang-switch">EN</a>
             </div>
+            
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -133,6 +135,7 @@
             </div>
         </footer>
     </div>
+
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
@@ -141,6 +144,16 @@
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
+
+        // [추가됨] 메뉴 클릭 시 닫기
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
     </script>
+
 </body>
 </html>

@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=18">
+    <link rel="stylesheet" href="../css/style.css?v=26">
 </head>
 <body>
 
     <div class="container">
         <header>
-            <a href="index.html" class="logo">
+            <a href="./index.html" class="logo">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </a>
+            
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html">Product</a></li>
-                    <li><a href="gallery.html" class="active">Gallery</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="./gallery.html" class="active">Gallery</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
+            
             <div class="lang-switch-wrap">
                 <a href="../gallery.html" class="lang-switch">KR</a>
             </div>
+            
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -109,14 +112,26 @@
             </div>
         </footer>
     </div>
+
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
+        // 햄버거 버튼 클릭
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
+
+        // [추가됨] 메뉴 항목 클릭 시 메뉴 닫기
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
     </script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - LUMOS CANDLE</title>
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=26">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Privacy Policy 페이지 전용 스타일 */
@@ -50,6 +50,7 @@
             <div class="lang-switch-wrap">
                 <a href="en/index.html" class="lang-switch">EN</a>
             </div>
+            
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -148,14 +149,14 @@
 
         <footer>
             <div class="container footer-content">
-                <div class="footer-brand" style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px;">
-                    <img src="images/logo.png" alt="Lumos Icon" style="width: 30px; height: auto; margin: 0;">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
                     <span class="footer-logo-text">
                         <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
                     </span>
                 </div>
                 
-                <div class="footer-info" style="font-size: 12px; color: #888;">
+                <div class="footer-info">
                     <p><strong>Corporation : LUMOS CANDLE</strong></p>
                     <p>CEO : Kuk-Hyun Han</p>
                     <p>Contact : <a href="mailto:lumos@lumoscandle.com" style="border-bottom: 1px solid #ddd;">lumos@lumoscandle.com</a></p>
@@ -163,13 +164,14 @@
                     <p style="margin-top: 20px; color: #bbb;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
                 </div>
 
-                <div class="footer-links" style="margin-top: 15px; font-size: 12px;">
+                <div class="footer-links">
                     <a href="privacy.html" style="color:#555; font-weight:bold;">Privacy Policy</a>
                     <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank" style="color:#555;">YouTube</a>
                 </div>
             </div>
         </footer>
     </div>
+
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
@@ -178,6 +180,16 @@
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
+
+        // [추가됨] 메뉴 클릭 시 닫기
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
     </script>
+
 </body>
 </html>
