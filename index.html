@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUMOS CANDLE</title>
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -36,9 +36,9 @@
         </header>
 
         <section class="hero">
+            <img src="images/home-title.png" alt="LUMOS CANDLE, The Easiest Candle in the World" class="blend-mode" style="display: block; margin: 0 auto 40px; max-width: 500px; width: 100%;">
             
-            <img src="images/home-title.png" alt="LUMOS CANDLE, The Easiest Candle in the World" class="blend-mode" style="display: block; margin: 0 auto 40px; max-width: 500px;">
-            <img src="images/1.png" alt="Lumos Candle Main" class="hero-img">
+            <img src="images/1.png" alt="Lumos Candle Main" class="hero-img" style="width: 100%; max-width: 900px;">
 
             <div class="hero-desc">
                 <p>루모스캔들은 버튼만 누르면 실제 불꽃이 점화되는 마법 같은 향초입니다.</p>
@@ -47,7 +47,7 @@
         </section>
 
         <section style="padding-top: 20px; padding-bottom: 20px;">
-            <img src="images/home-info.png" alt="Features" style="max-width: 800px;">
+            <img src="images/home-info.png" alt="Features" style="max-width: 800px; width: 100%;">
         </section>
 
         <section class="shop-section">
@@ -59,21 +59,23 @@
 
             <div class="shop-category">South Korea</div>
             <div class="shop-logos">
-                <a href="https://smartstore.naver.com/lumoscandle" target="_blank"><img src="images/logo_smartstore.png" alt="Naver Smart Store" style="width: 200px; height: auto;"></a>
+                <a href="https://smartstore.naver.com/lumoscandle" target="_blank">
+                    <img src="images/logo_smartstore.png" alt="Naver Smart Store" style="max-width: 200px; width: auto; height: 30px;">
+                </a>
             </div>
 
             <div class="shop-category">Worldwide</div>
             <div class="shop-logos">
-                <a href="https://www.indiegogo.com/en/projects/lumoscandle/lumos-candle-world-s-first-auto-ignition-candle#/" target="_blank"><img src="images/logo_indiegogo.png" alt="Indiegogo"></a>
+                <a href="https://www.indiegogo.com/projects/lumos-candle-world-s-first-auto-ignition-candle" target="_blank">
+                    <img src="images/logo_indiegogo.png" alt="Indiegogo" style="height: 30px; width: auto;">
+                </a>
             </div>
         </section>
 
         <footer>
             <div class="container footer-content">
-                
                 <div class="footer-brand">
                     <img src="images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
-                    
                     <span class="footer-logo-text">
                         <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
                     </span>
@@ -99,9 +101,19 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
+        // 버튼 클릭 시 메뉴 열기/닫기
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
+        });
+
+        // 메뉴 항목 클릭 시 메뉴 닫기 (사용성 개선)
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
         });
     </script>
 

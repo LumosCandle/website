@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=19">
+    <link rel="stylesheet" href="../css/style.css?v=24">
 </head>
 <body>
 
@@ -13,6 +13,7 @@
             <a href="./index.html" class="logo">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </a>
+            
             <nav>
                 <ul>
                     <li><a href="./index.html" class="active">Home</a></li>
@@ -22,9 +23,11 @@
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
+            
             <div class="lang-switch-wrap">
                 <a href="../index.html" class="lang-switch">KR</a>
             </div>
+
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -33,9 +36,10 @@
         </header>
 
         <section class="hero">
-            <img src="../images/home-title.png" alt="LUMOS CANDLE, The Easiest Candle in the World" style="display: block; margin: 0 auto 40px; max-width: 500px;">
+            <img src="../images/home-title.png" alt="LUMOS CANDLE, The Easiest Candle in the World" class="blend-mode" style="display: block; margin: 0 auto 40px; max-width: 500px; width: 100%;">
 
-            <img src="../images/1.png" alt="Lumos Candle Main" class="hero-img">
+            <img src="../images/1.png" alt="Lumos Candle Main" class="hero-img" style="width: 100%; max-width: 900px;">
+            
             <div class="hero-desc">
                 <p>Lumos Candle is a magical candle that lights up with just a touch of a button.</p>
                 <p>Experience the safety and convenience of Lumos Candle.</p>
@@ -43,22 +47,28 @@
         </section>
 
         <section style="padding-top: 20px; padding-bottom: 20px;">
-            <img src="../images/home-info.png" alt="Features" style="max-width: 800px;">
+            <img src="../images/home-info.png" alt="Features" style="max-width: 800px; width: 100%;">
         </section>
 
         <section class="shop-section">
             <h2 class="section-title">Where you can meet</h2>
+            
             <div class="section-subtitle">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </div>
+
             <div class="shop-category">South Korea</div>
             <div class="shop-logos">
-                <a href="https://smartstore.naver.com/lumoscandle" target="_blank"><img src="../images/logo_smartstore.png" alt="Naver Smart Store" style="width: 200px; height: auto;"></a>
+                <a href="https://smartstore.naver.com/lumoscandle" target="_blank">
+                    <img src="../images/logo_smartstore.png" alt="Naver Smart Store" style="max-width: 200px; width: auto; height: 30px;">
+                </a>
             </div>
 
             <div class="shop-category">Worldwide</div>
             <div class="shop-logos">
-                <a href="https://www.indiegogo.com/en/projects/lumoscandle/lumos-candle-world-s-first-auto-ignition-candle#/" target="_blank"><img src="../images/logo_indiegogo.png" alt="Indiegogo"></a>
+                <a href="https://www.indiegogo.com/projects/lumos-candle-world-s-first-auto-ignition-candle" target="_blank">
+                    <img src="../images/logo_indiegogo.png" alt="Indiegogo" style="height: 30px; width: auto;">
+                </a>
             </div>
         </section>
 
@@ -70,6 +80,7 @@
                         <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
                     </span>
                 </div>
+                
                 <div class="footer-info">
                     <p><strong>Corporation : LUMOS CANDLE</strong></p>
                     <p>CEO : Kuk-Hyun Han</p>
@@ -77,6 +88,7 @@
                     <p>Tel : +82-41-852-3300</p>
                     <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
                 </div>
+
                 <div class="footer-links">
                     <a href="../privacy.html">Privacy Policy</a>
                     <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube</a>
@@ -84,14 +96,26 @@
             </div>
         </footer>
     </div>
+
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
+        // 버튼 클릭 시 메뉴 열기/닫기
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
+
+        // 메뉴 항목 클릭 시 메뉴 닫기 (사용성 개선)
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
     </script>
+
 </body>
 </html>
