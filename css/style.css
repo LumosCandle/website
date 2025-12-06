@@ -299,3 +299,58 @@ footer {
     padding-left: 25px; /* Q 마크만큼 들여쓰기 */
     word-break: keep-all;
 }
+
+/* =========================================
+   [추가됨] Contact Page Styles
+   ========================================= */
+   .contact-section {
+    max-width: 600px;
+    margin: 0 auto 80px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+.btn-send {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-send:hover {
+    background-color: #FFC000;
+    color: #000;
+}
