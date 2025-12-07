@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=26">
+    <link rel="stylesheet" href="../css/style.css?v=32">
 </head>
 <body>
 
@@ -13,7 +13,6 @@
             <a href="./index.html" class="logo">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </a>
-            
             <nav>
                 <ul>
                     <li><a href="./index.html">Home</a></li>
@@ -23,11 +22,9 @@
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
-            
             <div class="lang-switch-wrap">
                 <a href="../gallery.html" class="lang-switch">KR</a>
             </div>
-            
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -37,9 +34,8 @@
 
         <section class="gallery-section" style="padding-top: 40px;">
             <div class="gallery-title-wrapper" style="margin-bottom: 20px;">
-                <h3 style="font-size: 20px; font-weight: 700; color: #333; margin: 0;">Lumos Candle Video</h3>
+                <h3 style="font-size: 20px; font-weight: 700; color: #333; margin: 0;">Lumos Candle video</h3>
             </div>
-            
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/nTRqRxyD-wM" title="Lumos Candle Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -47,44 +43,19 @@
 
         <section class="gallery-section">
             <div class="gallery-title-wrapper" style="margin-bottom: 20px;">
-                <h3 style="font-size: 20px; font-weight: 700; color: #333; margin: 0;">Lumos Candle Product Photos</h3>
+                <h3 style="font-size: 20px; font-weight: 700; color: #333; margin: 0;">Lumos Candle product photos</h3>
             </div>
-            
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/1.png" alt="Gallery Image 1">
-                </div>
-                
-                <div class="gallery-item video-item">
-                    <img src="../images/2.gif" alt="Lumos GIF 1">
-                </div>
-                
-                <div class="gallery-item video-item">
-                    <img src="../images/product-convenience.gif" alt="Lumos GIF 2">
-                </div>
-                
-                <div class="gallery-item video-item">
-                    <img src="../images/product-easy1.gif" alt="Lumos GIF 3">
-                </div>
-
-                <div class="gallery-item">
-                    <img src="../images/gallery-woman.png" alt="Gallery Image 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/gallery-candle.png" alt="Gallery Image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/gallery-charging.png" alt="Gallery Image 4">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/gallery-button.jpg" alt="Gallery Image 5">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/gallery-deco1.png" alt="Gallery Image 6">
-                </div>
-                <div class="gallery-item">
-                    <img src="../images/gallery-deco2.png" alt="Gallery Image 7">
-                </div>
+                <div class="gallery-item"><img src="../images/1.png" alt="Gallery Image 1"></div>
+                <div class="gallery-item video-item"><img src="../images/2.gif" alt="Lumos GIF 1"></div>
+                <div class="gallery-item video-item"><img src="../images/product-convenience.gif" alt="Lumos GIF 2"></div>
+                <div class="gallery-item video-item"><img src="../images/product-easy1.gif" alt="Lumos GIF 3"></div>
+                <div class="gallery-item"><img src="../images/gallery-woman.png" alt="Gallery Image 2"></div>
+                <div class="gallery-item"><img src="../images/gallery-candle.png" alt="Gallery Image 3"></div>
+                <div class="gallery-item"><img src="../images/gallery-charging.png" alt="Gallery Image 4"></div>
+                <div class="gallery-item"><img src="../images/gallery-button.jpg" alt="Gallery Image 5"></div>
+                <div class="gallery-item"><img src="../images/gallery-deco1.png" alt="Gallery Image 6"></div>
+                <div class="gallery-item"><img src="../images/gallery-deco2.png" alt="Gallery Image 7"></div>
             </div>
         </section>
 
@@ -92,11 +63,8 @@
             <div class="container footer-content">
                 <div class="footer-brand">
                     <img src="../images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
-                    <span class="footer-logo-text">
-                        <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
-                    </span>
+                    <span class="footer-logo-text"><span class="lumos">LUMOS</span><span class="candle">CANDLE</span></span>
                 </div>
-                
                 <div class="footer-info">
                     <p><strong>Corporation : LUMOS CANDLE</strong></p>
                     <p>CEO : Kuk-Hyun Han</p>
@@ -104,7 +72,6 @@
                     <p>Tel : +82-41-852-3300</p>
                     <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
                 </div>
-
                 <div class="footer-links">
                     <a href="../privacy.html">Privacy Policy</a>
                     <a href="https://www.youtube.com/channel/UCNlHWObFfKwee8Oqod1fRqw" target="_blank">YouTube</a>
@@ -112,18 +79,13 @@
             </div>
         </footer>
     </div>
-
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
-
-        // 햄버거 버튼 클릭
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
-
-        // [추가됨] 메뉴 항목 클릭 시 메뉴 닫기
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -132,6 +94,5 @@
             });
         });
     </script>
-
 </body>
 </html>

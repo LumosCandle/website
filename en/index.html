@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=26">
+    <link rel="stylesheet" href="../css/style.css?v=32">
 </head>
 <body>
 
@@ -36,7 +36,12 @@
         </header>
 
         <section class="hero">
-            <img src="../images/home-title.png" alt="LUMOS CANDLE, The Easiest Candle in the World" class="blend-mode" style="display: block; margin: 0 auto 40px; max-width: 500px; width: 100%;">
+            <h1 class="hero-main-title">
+                <span class="brand-name">
+                    <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
+                </span>
+                <span class="slogan-text">The Easiest Candle in the World</span>
+            </h1>
 
             <img src="../images/1.png" alt="Lumos Candle Main" class="hero-img" style="width: 100%; max-width: 900px;">
             
@@ -60,7 +65,7 @@
             <div class="shop-category">South Korea</div>
             <div class="shop-logos">
                 <a href="https://smartstore.naver.com/lumoscandle" target="_blank">
-                    <img src="../images/logo_smartstore.png" alt="Naver Smart Store" style="max-width: 200px; width: auto; height: 50px;">
+                    <img src="../images/logo_smartstore.png" alt="Naver Smart Store" style="max-width: 200px; width: auto; height: 30px;">
                 </a>
             </div>
 
@@ -107,7 +112,7 @@
             nav.classList.toggle('active');
         });
 
-        // 메뉴 항목 클릭 시 메뉴 닫기 (사용성 개선)
+        // 메뉴 항목 클릭 시 메뉴 닫기
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
