@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=34">
+    <title>Gallery — LUMOS CANDLE</title>
+    <meta name="description" content="Photos and videos of Lumos Candle. See the world's first auto-ignition candle in action.">
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="canonical" href="https://www.lumoscandle.com/en/gallery.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LUMOS CANDLE">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Gallery — LUMOS CANDLE">
+    <meta property="og:description" content="Photos and videos of Lumos Candle.">
+    <meta property="og:url" content="https://www.lumoscandle.com/en/gallery.html">
+    <meta property="og:image" content="https://www.lumoscandle.com/images/og-main.png">
+    <meta property="og:image:width" content="1728">
+    <meta property="og:image:height" content="910">
+    <meta property="og:image:alt" content="LUMOS CANDLE — The world's first auto-ignition candle">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery — LUMOS CANDLE">
+    <meta name="twitter:description" content="Photos and videos of Lumos Candle.">
+    <meta name="twitter:image" content="https://www.lumoscandle.com/images/og-main.png">
+    <link rel="stylesheet" href="../css/style.css?v=35">
 </head>
 <body>
 
@@ -32,7 +49,7 @@
             </div>
         </header>
 
-        <section class="gallery-section">
+        <section class="gallery-section reveal">
             <div class="gallery-title-wrapper">
                 <h3>Lumos Candle video</h3>
             </div>
@@ -41,7 +58,7 @@
             </div>
         </section>
 
-        <section class="gallery-section">
+        <section class="gallery-section reveal">
             <div class="gallery-title-wrapper">
                 <h3>Lumos Candle product photos</h3>
             </div>
@@ -58,6 +75,11 @@
                 <div class="gallery-item"><img src="../images/gallery-deco2.png" alt="Gallery Image 7"></div>
             </div>
         </section>
+
+        <div class="lb-backdrop" id="lb-backdrop" role="dialog" aria-modal="true" aria-label="Image lightbox">
+            <button class="lb-close" id="lb-close" aria-label="Close">&#x2715;</button>
+            <img class="lb-img" id="lb-img" src="" alt="">
+        </div>
 
         <footer>
             <div class="container footer-content">
@@ -93,6 +115,33 @@
                 nav.classList.remove('active');
             });
         });
+    </script>
+    <script src="../js/reveal.js"></script>
+    <script>
+        (function () {
+            var backdrop = document.getElementById('lb-backdrop');
+            var lbImg    = document.getElementById('lb-img');
+            var lbClose  = document.getElementById('lb-close');
+            if (!backdrop) return;
+            document.querySelectorAll('.gallery-item').forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var img = item.querySelector('img');
+                    if (!img) return;
+                    lbImg.src = img.src;
+                    lbImg.alt = img.alt;
+                    backdrop.classList.add('is-open');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            function close() {
+                backdrop.classList.remove('is-open');
+                document.body.style.overflow = '';
+                lbImg.src = '';
+            }
+            backdrop.addEventListener('click', function (e) { if (e.target === backdrop) close(); });
+            lbClose.addEventListener('click', close);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+        }());
     </script>
 </body>
 </html>
