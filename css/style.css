@@ -1,9 +1,59 @@
 @charset "utf-8";
 
-/* =========================================
-   1. 폰트 및 기본 설정
-   ========================================= */
+/* 폰트 임포트 — @import must appear before all other rules */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* =========================================
+   0. 디자인 토큰 (CSS Variables)
+   ========================================= */
+:root {
+    /* Brand Colors */
+    --color-brand-yellow: #FFC000;
+    --color-brand-amber:  #eebb4d;
+
+    /* Text */
+    --color-text-dark:   #333;
+    --color-text-mid:    #555;
+    --color-text-light:  #666;
+    --color-text-muted:  #999;
+    --color-text-faint:  #ccc;
+
+    /* Surfaces & Borders */
+    --color-border-light: #eee;
+    --color-border-mid:   #ddd;
+    --color-bg-subtle:    #fafafa;
+    --color-bg-offwhite:  #fdfcfa;
+
+    /* Typography */
+    --font-brand: 'Montserrat', sans-serif;
+    --font-body:  'Noto Sans KR', sans-serif;
+
+    /* Letter Spacing */
+    --ls-brand: 5px;   /* hero brand name */
+    --ls-wide:  2px;   /* section labels, footer logo */
+    --ls-nav:   1px;   /* navigation links */
+    --ls-btn:   1.5px; /* button labels */
+
+    /* Shadows */
+    --shadow-card:  0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.1);
+
+    /* Radii */
+    --radius-card: 12px;
+    --radius-pill: 4px;   /* geometric, not pill — matches thin-uppercase brand direction */
+
+    /* Spacing */
+    --spacing-section:     60px;
+    --spacing-section-top: 40px;
+
+    /* Transitions */
+    --transition-base: 0.25s ease;
+}
+
+
+/* =========================================
+   1. 기본 설정
+   ========================================= */
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,136 +82,230 @@ img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
     font-weight: 700; 
     text-transform: uppercase;
 }
-.lumos { color: #FFC000; margin-right: 5px; }
+.lumos { color: var(--color-brand-yellow); margin-right: 5px; }
 .candle { color: #000000; }
 
 
 /* =========================================
    2. 헤더
    ========================================= */
-header { 
-    min-height: 80px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+header {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    padding: 15px 0;
+    padding: 14px 0;
     flex-wrap: wrap;
     gap: 10px;
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: 0;
 }
 
-.logo { 
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 22px; 
-    letter-spacing: 1px; 
-    display: flex; 
-    align-items: center; 
-    line-height: 1; 
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    letter-spacing: var(--ls-wide);
+    display: flex;
+    align-items: center;
+    line-height: 1;
     z-index: 20;
-    flex-shrink: 0; 
-    font-weight: 400; 
+    flex-shrink: 0;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
 nav {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
-    justify-content: center; 
-    margin: 0 20px; 
+    justify-content: center;
+    margin: 0 20px;
 }
 
-nav ul { display: flex; gap: 30px; padding: 0; margin: 0; }
+nav ul { display: flex; gap: 32px; padding: 0; margin: 0; }
 
-nav a { 
-    font-size: 13px; 
-    color: #888; 
-    text-transform: uppercase; 
-    font-weight: 600; 
+nav a {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 600;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.5px;
-    white-space: nowrap; 
+    letter-spacing: var(--ls-nav);
+    white-space: nowrap;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid transparent;
+    transition: color var(--transition-base), border-color var(--transition-base);
 }
-nav a:hover, nav a.active { color: #333; font-weight: 800; }
+nav a:hover, nav a.active { color: var(--color-text-dark); border-bottom-color: var(--color-brand-yellow); }
 
 .lang-switch-wrap { z-index: 20; flex-shrink: 0; }
-.lang-switch { 
-    border: 1px solid #ddd; 
-    padding: 5px 12px; 
-    font-size: 11px; 
-    color: #666; 
-    border-radius: 0; 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 600;
+.lang-switch {
+    border: 1px solid var(--color-border-mid);
+    padding: 4px 10px;
+    font-size: 10px;
+    color: var(--color-text-muted);
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: var(--ls-nav);
     background: #fff;
     white-space: nowrap;
+    transition: border-color var(--transition-base), color var(--transition-base);
 }
-.lang-switch:hover { border-color: #333; color: #333; }
+.lang-switch:hover { border-color: var(--color-text-dark); color: var(--color-text-dark); }
 
+
+/* ---- Mobile Menu Toggle ---- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 20;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    padding: 0;
+}
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background-color: var(--color-text-dark);
+    border-radius: 1px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.menu-toggle.active span:nth-child(1) { transform: translateY(6.25px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-6.25px) rotate(-45deg); }
 
 /* [반응형] 태블릿/모바일 */
 @media (max-width: 900px) {
-    header { flex-direction: column; gap: 15px; padding-bottom: 20px; align-items: center; }
-    .logo { width: 100%; justify-content: center; margin-bottom: 5px; }
-    .lang-switch-wrap { position: absolute; top: 20px; right: 0; display: block !important; }
-    nav { width: 100%; overflow-x: auto; justify-content: center; margin: 0; }
-    nav ul { gap: 20px; padding-bottom: 5px; }
-    nav a { font-size: 12px; }
+    .menu-toggle { display: flex; }
+
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 16px 0;
+        gap: 0;
+        min-height: auto;
+    }
+    .logo {
+        flex: 1;
+        width: auto;
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+    .lang-switch-wrap {
+        position: static;
+        display: flex !important;
+        align-items: center;
+        margin-right: 16px;
+    }
+    nav {
+        display: none;
+        order: 10;
+        flex: 0 0 100%;
+        justify-content: center;
+        margin: 0;
+        padding: 20px 0;
+        border-top: 1px solid var(--color-border-light);
+        overflow: visible;
+    }
+    nav.active { display: flex; }
+    nav ul {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    nav a { font-size: 13px; }
 }
 
 @media (max-width: 480px) {
     .hero-title { font-size: 28px; }
     .wix-feature-title { font-size: 24px; }
     .container { padding: 0 15px; }
-    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .hero-main-title .brand-name { font-size: 32px; letter-spacing: 3px; }
+    .hero-main-title .slogan-text { font-size: 10px; letter-spacing: 2px; }
+    .hero-cta { gap: 12px; }
 }
 
 
 /* =========================================
    3. 메인 (Home)
    ========================================= */
-.hero { text-align: center; padding: 50px 0 30px; }
+.hero { text-align: center; padding: 64px 0 48px; }
 
 .hero-main-title {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    color: #333;
-    line-height: 1.2;
-    margin: 0 auto 40px;
+    color: var(--color-text-dark);
+    line-height: 1.15;
+    margin: 0 auto 28px;
     max-width: 800px;
 }
 
 .hero-main-title .brand-name {
     display: block;
-    font-size: 48px;
-    font-weight: 700; 
-    margin-bottom: 10px;
-    letter-spacing: -1px;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: var(--ls-brand);
+    margin-bottom: 18px;
 }
-.hero-main-title .brand-name .lumos { color: #FFC000; margin-right: 5px; }
+.hero-main-title .brand-name .lumos { color: var(--color-brand-yellow); margin-right: 2px; }
 .hero-main-title .brand-name .candle { color: #000; }
 
 .hero-main-title .slogan-text {
     display: block;
-    font-size: 24px;
-    font-weight: 700;
-    color: #555;
-    letter-spacing: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.hero-img { width: 100%; max-width: 900px; margin-bottom: 40px; }
-.hero-desc { font-size: 16px; color: #555; line-height: 1.7; word-break: keep-all; padding: 0 10px; }
+.hero-img { width: 100%; max-width: 900px; margin-top: 0; margin-bottom: 44px; }
+.hero-desc {
+    font-size: 15px;
+    color: var(--color-text-mid);
+    line-height: 1.8;
+    word-break: keep-all;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* Hero CTA */
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 0;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
 
 @media (max-width: 768px) {
-    .hero-main-title .brand-name { font-size: 32px; }
-    .hero-main-title .slogan-text { font-size: 16px; }
+    .hero { padding: 48px 0 36px; }
+    .hero-main-title .brand-name { font-size: 38px; letter-spacing: 3px; }
+    .hero-main-title .slogan-text { font-size: 10px; letter-spacing: 2.5px; }
+    .hero-img { margin-top: 0; margin-bottom: 36px; }
 }
 
-section { padding: 50px 0; text-align: center; }
-h2.section-title { font-size: 22px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; color: #333; font-weight: 800; font-family: 'Montserrat', sans-serif; }
-.section-subtitle { font-size: 16px; margin-bottom: 40px; letter-spacing: 2px; }
+section { padding: var(--spacing-section) 0; text-align: center; }
+h2.section-title { font-size: 13px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: var(--ls-btn); color: var(--color-text-muted); font-weight: 700; font-family: 'Montserrat', sans-serif; }
+.section-subtitle { font-size: 20px; margin-bottom: 40px; letter-spacing: var(--ls-wide); font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-.shop-section { border-top: 1px solid #f8f8f8; padding-top: 60px; }
-.shop-category { font-size: 13px; color: #aaa; margin: 30px 0 15px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+/* Home info image section */
+.home-info-section { padding: 0 0 var(--spacing-section-top); text-align: center; }
+
+.shop-section { border-top: 1px solid #f0f0f0; padding-top: 60px; }
+.shop-category { font-size: 11px; color: var(--color-text-muted); margin: 28px 0 16px; text-transform: uppercase; letter-spacing: var(--ls-btn); font-weight: 700; font-family: 'Montserrat', sans-serif; }
 .shop-logos { display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; }
 .shop-logos img { height: 24px; width: auto; }
 .press-logos { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; align-items: center; opacity: 0.8; flex-wrap: wrap; }
@@ -171,24 +315,24 @@ h2.section-title { font-size: 22px; margin-bottom: 10px; text-transform: upperca
 /* =========================================
    4. 제품 (Product)
    ========================================= */
-.product-intro { text-align: center; margin-bottom: 60px; padding-top: 30px; }
-.product-intro h2 { font-size: 26px; margin-bottom: 15px; font-weight: 700; color: #333; line-height: 1.3; word-break: keep-all; }
-.product-intro h3 { font-size: 16px; color: #666; font-weight: 400; margin-bottom: 30px; font-family: 'Noto Sans KR', sans-serif; }
+.product-intro { text-align: center; margin-bottom: 72px; padding-top: var(--spacing-section-top); }
+.product-intro h2 { font-size: 24px; margin-bottom: 12px; font-weight: 700; color: var(--color-text-dark); line-height: 1.4; word-break: keep-all; }
+.product-intro h3 { font-size: 14px; color: var(--color-text-muted); font-weight: 400; margin-bottom: 36px; font-family: 'Montserrat', sans-serif; letter-spacing: var(--ls-nav); text-transform: uppercase; }
 
-.feature-section { margin-bottom: 80px; text-align: center; }
-.wix-feature-title { font-size: 26px; color: #333; margin-bottom: 20px; letter-spacing: -0.5px; line-height: 1.2; padding: 0 10px; }
-.wix-sub-title { font-size: 20px; color: #333; margin-bottom: 15px; }
-.feature-desc { font-size: 15px; line-height: 1.7; color: #555; max-width: 800px; margin: 0 auto 30px; word-break: keep-all; padding: 0 15px; }
-.feature-media, .feature-gif { max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin: 0 auto 30px; display: block; }
+.feature-section { margin-bottom: 96px; text-align: center; }
+.wix-feature-title { font-size: 24px; color: var(--color-text-dark); margin-bottom: 20px; letter-spacing: 0; line-height: 1.3; padding: 0 10px; }
+.wix-sub-title { font-size: 18px; color: var(--color-text-dark); margin-bottom: 15px; }
+.feature-desc { font-size: 16px; line-height: 1.85; color: var(--color-text-mid); max-width: 680px; margin: 0 auto 36px; word-break: keep-all; padding: 0 15px; }
+.feature-media, .feature-gif { max-width: 100%; border-radius: var(--radius-card); box-shadow: var(--shadow-card); margin: 0 auto 30px; display: block; }
 .feature-title-img { max-width: 550px; margin: 0 auto 30px; width: 100%; }
 
 .product-text-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28px; 
-    font-weight: 700; 
-    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-text-dark);
     text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: var(--ls-wide);
     line-height: 1.3;
     margin: 0 auto 30px;
     max-width: 800px;
@@ -196,79 +340,205 @@ h2.section-title { font-size: 22px; margin-bottom: 10px; text-transform: upperca
 }
 
 @media (max-width: 768px) {
-    .product-text-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
+    .product-text-title { font-size: 20px; letter-spacing: 1px; margin-bottom: 20px; }
+    .feature-section { margin-bottom: 64px; }
 }
 
-.scent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 30px; }
-.cert-marks { display: flex; justify-content: center; gap: 20px; align-items: center; margin: 50px 0; flex-wrap: wrap; }
-.cert-marks img { height: 50px; width: auto; }
-.btn-download, .btn-buy { display: inline-block; padding: 15px 30px; background-color: #333; color: #fff; font-size: 14px; font-weight: 700; border-radius: 50px; margin-top: 30px; transition: 0.3s; text-transform: uppercase; font-family: 'Montserrat', sans-serif; max-width: 90%; }
-.btn-download:hover, .btn-buy:hover { background-color: #FFC000; color: #000; transform: translateY(-3px); }
+.scent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 36px; }
+.cert-marks { display: flex; justify-content: center; gap: 24px; align-items: center; margin: 52px 0; flex-wrap: wrap; }
+.cert-marks img { height: 52px; width: auto; opacity: 0.85; transition: opacity var(--transition-base); }
+.cert-marks img:hover { opacity: 1; }
+
+/* Shared button base */
+.btn-download, .btn-buy {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: var(--color-text-dark);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: var(--ls-btn);
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-text-dark);
+    margin-top: 32px;
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 90%;
+}
+.btn-download:hover, .btn-buy:hover {
+    background-color: var(--color-brand-yellow);
+    border-color: var(--color-brand-yellow);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Primary CTA button (hero) */
+.btn-primary {
+    display: inline-block;
+    padding: 13px 32px;
+    background-color: var(--color-text-dark);
+    color: #fff;
+    font-family: var(--font-brand);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-btn);
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-text-dark);
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+}
+.btn-primary:hover {
+    background-color: var(--color-brand-yellow);
+    border-color: var(--color-brand-yellow);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Outline CTA button (hero secondary) */
+.btn-outline {
+    display: inline-block;
+    padding: 13px 32px;
+    background-color: transparent;
+    color: var(--color-text-dark);
+    font-family: var(--font-brand);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-btn);
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-border-mid);
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+}
+.btn-outline:hover {
+    border-color: var(--color-text-dark);
+    background-color: var(--color-text-dark);
+    color: #fff;
+    transform: translateY(-2px);
+}
 
 .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; }
-.product-card { border: 1px solid #eee; padding: 20px; transition: 0.3s; text-align: center; background: #fff; }
-.product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); transform: translateY(-5px); border-color: #ddd; }
-.product-info h3 { font-size: 18px; margin-bottom: 10px; color: #222; font-family: 'Montserrat', sans-serif; font-weight: 700; }
+.product-card { border: 1px solid var(--color-border-light); padding: 24px; transition: box-shadow var(--transition-base), transform var(--transition-base); text-align: center; background: #fff; }
+.product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--color-border-mid); }
+.product-info h3 { font-size: 16px; margin-bottom: 10px; color: #222; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: var(--ls-nav); }
 
 
 /* =========================================
    5. 갤러리 (Gallery)
    ========================================= */
-.gallery-section { text-align: center; margin-bottom: 80px; padding: 0 20px; }
-.gallery-title-wrapper { text-align: center; margin-bottom: 30px; margin-top: 20px; }
+.gallery-section { text-align: center; margin-bottom: 80px; padding: var(--spacing-section-top) 20px 0; }
+.gallery-title-wrapper { text-align: center; margin-bottom: 28px; margin-top: 16px; }
 
-/* [수정됨] 갤러리 타이틀: 대문자 강제 해제 */
-.gallery-title-wrapper h3 { 
+.gallery-title-wrapper h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 22px; 
-    font-weight: 700; 
-    color: #333; 
-    margin: 0; 
-    text-transform: none; /* 대문자 강제 해제 */
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: var(--ls-btn);
 }
 
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto; }
-.gallery-item { border-radius: 0; overflow: hidden; transition: transform 0.3s ease; background: #fff; height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #eee; }
-.gallery-item:hover { transform: translateY(-3px); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; max-width: 1000px; margin: 0 auto; }
+.gallery-item { border-radius: 0; overflow: hidden; transition: transform var(--transition-base), box-shadow var(--transition-base); background: var(--color-bg-subtle); height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-border-light); }
+.gallery-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .gallery-item.video-item img { object-fit: contain; }
 
-.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto 50px; background: #000; border-radius: 10px; }
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto 50px; background: #000; border-radius: var(--radius-card); }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
 
 /* =========================================
    6. FAQ
    ========================================= */
-.faq-section { max-width: 800px; margin: 0 auto 60px; text-align: left; padding: 0 20px; }
-.faq-category-title { font-size: 20px; font-weight: 700; color: #eebb4d; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 50px; margin-bottom: 30px; }
-.faq-item { margin-bottom: 30px; }
-.faq-question { font-size: 16px; font-weight: 700; color: #333; margin-bottom: 10px; display: flex; align-items: flex-start; }
-.faq-question .q-mark { color: #eebb4d; margin-right: 8px; font-family: 'Montserrat', sans-serif; font-weight: 900; }
-.faq-answer { font-size: 15px; color: #666; line-height: 1.7; padding-left: 25px; word-break: keep-all; }
+.faq-section { max-width: 720px; margin: 0 auto 60px; text-align: left; padding: var(--spacing-section-top) 20px 0; }
+.faq-category-title { font-size: 11px; font-weight: 700; color: var(--color-brand-amber); border-bottom: 1px solid var(--color-border-light); padding-bottom: 10px; margin-top: 52px; margin-bottom: 28px; text-transform: uppercase; letter-spacing: var(--ls-btn); font-family: 'Montserrat', sans-serif; }
+.faq-item { margin-bottom: 28px; }
+.faq-question { font-size: 15px; font-weight: 700; color: var(--color-text-dark); margin-bottom: 8px; display: flex; align-items: flex-start; line-height: 1.5; }
+.faq-question .q-mark { color: var(--color-brand-amber); margin-right: 10px; font-family: 'Montserrat', sans-serif; font-weight: 900; flex-shrink: 0; }
+.faq-answer { font-size: 14px; color: var(--color-text-light); line-height: 1.85; padding-left: 26px; word-break: keep-all; }
 
 
 /* =========================================
    7. Contact
    ========================================= */
-.contact-section { max-width: 600px; margin: 0 auto 80px; text-align: left; padding: 0 20px; }
-.contact-form label { display: block; margin-bottom: 5px; font-size: 14px; font-weight: 700; color: #333; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 0; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; }
-.contact-form input:focus, .contact-form textarea:focus { border-color: #333; outline: none; }
-.btn-send { display: block; width: 100%; padding: 15px; background-color: #333; color: #fff; border: none; font-size: 14px; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.3s; font-family: 'Montserrat', sans-serif; }
-.btn-send:hover { background-color: #FFC000; color: #000; }
+.contact-section { max-width: 560px; margin: 0 auto 80px; text-align: left; padding: var(--spacing-section-top) 20px 0; }
+.contact-form label { display: block; margin-bottom: 6px; font-size: 11px; font-weight: 700; color: var(--color-text-dark); text-transform: uppercase; letter-spacing: var(--ls-nav); font-family: 'Montserrat', sans-serif; }
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 13px 14px;
+    margin-bottom: 22px;
+    border: 1px solid var(--color-border-mid);
+    border-radius: 0;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #fff;
+    transition: border-color var(--transition-base);
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--color-text-dark); outline: none; }
+.btn-send {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-text-dark);
+    color: #fff;
+    border: 1.5px solid var(--color-text-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: var(--ls-btn);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color var(--transition-base), color var(--transition-base);
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-send:hover { background-color: var(--color-brand-yellow); border-color: var(--color-brand-yellow); color: #000; }
 
 
 /* =========================================
    8. 푸터 (Footer)
    ========================================= */
-footer { padding: 60px 0; text-align: left; background-color: #fff; border-top: 2px solid #f5f5f5; font-size: 11px; color: #999; margin-top: 60px; }
-.footer-content { display: flex; flex-direction: column; align-items: flex-start; gap: 15px; }
-.footer-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-.footer-logo-text { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 0.5px; text-transform: uppercase; line-height: 1; }
-.footer-info p { margin-bottom: 5px; }
-.footer-links { margin-top: 20px; }
-.footer-links a { margin-right: 15px; text-decoration: underline; color: #aaa; }
+footer { padding: 64px 0 56px; text-align: left; background-color: #fff; border-top: 1px solid var(--color-border-light); font-size: 11px; color: var(--color-text-muted); margin-top: 60px; }
+.footer-content { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.footer-logo-text { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 400; letter-spacing: var(--ls-wide); text-transform: uppercase; line-height: 1; }
+.footer-info p { margin-bottom: 4px; line-height: 1.7; }
+.footer-links { margin-top: 18px; }
+.footer-links a { margin-right: 16px; text-decoration: none; color: var(--color-text-muted); border-bottom: 1px solid var(--color-border-mid); padding-bottom: 1px; transition: color var(--transition-base), border-color var(--transition-base); }
+.footer-links a:hover { color: var(--color-text-light); border-bottom-color: #bbb; }
+
+
+/* =========================================
+   9. 유틸리티 (Utility Classes)
+   ========================================= */
+
+/* Footer icon — replaces repeated inline style="width:24px;height:auto;margin:0" */
+.footer-logo-img { width: 24px; height: auto; margin: 0; }
+
+/* Footer copyright line — replaces repeated inline style="margin-top:15px;color:#ccc" */
+.footer-copyright { margin-top: 15px; color: var(--color-text-faint); }
+
+/* Contact page section heading */
+.contact-heading { margin-bottom: 28px; font-weight: 700; font-size: 22px; color: var(--color-text-dark); }
+
+/* Inline image row used in product feature sections */
+.feature-img-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.feature-img-row img { border-radius: 10px; }
+
+/* Section with background fill (scent/cert sections) */
+.section-bg-subtle { background-color: var(--color-bg-subtle); padding: 72px 20px; }
+
+/* Feature block h3 sub-heading */
+.feature-block h3 { font-size: 16px; font-weight: 700; color: var(--color-text-dark); margin-bottom: 8px; font-family: 'Montserrat', sans-serif; letter-spacing: var(--ls-nav); }
+
+/* Horizontal rule between product sections */
+.section-divider { border: 0; border-top: 1px solid var(--color-border-light); margin: 50px 0; }
+
+/* Brand amber accent — used on product feature section headings */
+.text-brand-amber { color: var(--color-brand-amber); }
+
+/* Feature sub-description — light caption below feature headings */
+.feature-caption { color: var(--color-text-light); margin-bottom: 20px; }
+
+/* Feature block wrapper — groups heading, caption, and media */
+.feature-block { margin-bottom: 80px; }

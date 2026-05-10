@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=32">
+    <link rel="stylesheet" href="../css/style.css?v=34">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
             <a href="./index.html" class="logo">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </a>
-            
+
             <nav>
                 <ul>
                     <li><a href="./index.html" class="active">Home</a></li>
@@ -23,7 +23,7 @@
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
-            
+
             <div class="lang-switch-wrap">
                 <a href="../index.html" class="lang-switch">KR</a>
             </div>
@@ -43,21 +43,26 @@
                 <span class="slogan-text">The Easiest Candle in the World</span>
             </h1>
 
-            <img src="../images/1.png" alt="Lumos Candle Main" class="hero-img" style="width: 100%; max-width: 900px;">
-            
+            <div class="hero-cta">
+                <a href="https://www.indiegogo.com/projects/lumos-candle-world-s-first-auto-ignition-candle" class="btn-primary" target="_blank" rel="noopener noreferrer">Buy Now</a>
+                <a href="./product.html" class="btn-outline">Explore Product</a>
+            </div>
+
+            <img src="../images/1.png" alt="Lumos Candle Main" class="hero-img">
+
             <div class="hero-desc">
                 <p>Lumos Candle is a magical candle that lights up with just a push of a button.</p>
                 <p>Experience the safety and convenience of Lumos Candle.</p>
             </div>
         </section>
 
-        <section style="padding-top: 20px; padding-bottom: 20px;">
+        <section class="home-info-section">
             <img src="../images/home-info.png" alt="Features" style="max-width: 800px; width: 100%;">
         </section>
 
         <section class="shop-section">
             <h2 class="section-title">Where you can meet</h2>
-            
+
             <div class="section-subtitle">
                 <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
             </div>
@@ -80,18 +85,18 @@
         <footer>
             <div class="container footer-content">
                 <div class="footer-brand">
-                    <img src="../images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <img src="../images/logo.png" alt="Lumos Icon" class="footer-logo-img">
                     <span class="footer-logo-text">
                         <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
                     </span>
                 </div>
-                
+
                 <div class="footer-info">
                     <p><strong>Corporation : LUMOS CANDLE</strong></p>
                     <p>CEO : Kuk-Hyun Han</p>
                     <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
                     <p>Tel : +82-41-852-3300</p>
-                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                    <p class="footer-copyright">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
                 </div>
 
                 <div class="footer-links">
@@ -106,13 +111,11 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
-        // 버튼 클릭 시 메뉴 열기/닫기
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
 
-        // 메뉴 항목 클릭 시 메뉴 닫기
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
