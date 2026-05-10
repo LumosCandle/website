@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUMOS CANDLE</title>
-    <link rel="stylesheet" href="css/style.css?v=32">
+    <link rel="stylesheet" href="css/style.css?v=34">
 </head>
 
 <body>
@@ -45,7 +45,12 @@
                 <span class="slogan-text">세상에서 가장 안전하고 쉬운 캔들</span>
             </h1>
 
-            <img src="images/1.png" alt="Lumos Candle Main" class="hero-img" style="width: 100%; max-width: 900px;">
+            <div class="hero-cta">
+                <a href="https://smartstore.naver.com/lumoscandle" class="btn-primary" target="_blank">구매하기</a>
+                <a href="product.html" class="btn-outline">제품 살펴보기</a>
+            </div>
+
+            <img src="images/1.png" alt="Lumos Candle Main" class="hero-img">
 
             <div class="hero-desc">
                 <p>루모스캔들은 버튼만 누르면 실제 불꽃이 점화되는 마법 같은 향초입니다.</p>
@@ -53,7 +58,7 @@
             </div>
         </section>
 
-        <section style="padding-top: 20px; padding-bottom: 20px;">
+        <section class="home-info-section">
             <img src="images/home-info.png" alt="Features" style="max-width: 800px; width: 100%;">
         </section>
 
@@ -84,7 +89,7 @@
         <footer>
             <div class="container footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <img src="images/logo.png" alt="Lumos Icon" class="footer-logo-img">
                     <span class="footer-logo-text">
                         <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
                     </span>
@@ -95,7 +100,7 @@
                     <p>CEO : Kuk-Hyun Han</p>
                     <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
                     <p>Tel : +82-41-852-3300</p>
-                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                    <p class="footer-copyright">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
                 </div>
 
                 <div class="footer-links">
@@ -110,13 +115,11 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('nav');
 
-        // 버튼 클릭 시 메뉴 열기/닫기
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             nav.classList.toggle('active');
         });
 
-        // 메뉴 항목 클릭 시 메뉴 닫기
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - LUMOS CANDLE</title>
-    <link rel="stylesheet" href="../css/style.css?v=32">
+    <link rel="stylesheet" href="../css/style.css?v=34">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
             <div class="lang-switch-wrap">
                 <a href="../contact.html" class="lang-switch">KR</a>
             </div>
-            
+
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -33,11 +33,11 @@
             </div>
         </header>
 
-        <section class="contact-section" style="padding-top: 40px;">
-            <p style="margin-bottom: 20px; font-weight: bold; font-size: 18px;">Send us a message</p>
-            
+        <section class="contact-section">
+            <p class="contact-heading">Send us a message</p>
+
             <form action="https://formspree.io/f/mldqlvga" method="POST" class="contact-form">
-                
+
                 <label for="name">Name *</label>
                 <input type="text" id="name" name="name" placeholder="Name" required>
 
@@ -57,18 +57,18 @@
         <footer>
             <div class="container footer-content">
                 <div class="footer-brand">
-                    <img src="../images/logo.png" alt="Lumos Icon" style="width: 24px; height: auto; margin: 0;">
+                    <img src="../images/logo.png" alt="Lumos Icon" class="footer-logo-img">
                     <span class="footer-logo-text">
                         <span class="lumos">LUMOS</span><span class="candle">CANDLE</span>
                     </span>
                 </div>
-                
+
                 <div class="footer-info">
                     <p><strong>Corporation : LUMOS CANDLE</strong></p>
                     <p>CEO : Kuk-Hyun Han</p>
                     <p>Contact : <a href="mailto:lumos@lumoscandle.com">lumos@lumoscandle.com</a></p>
                     <p>Tel : +82-41-852-3300</p>
-                    <p style="margin-top: 15px; color: #ccc;">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
+                    <p class="footer-copyright">Copyright ⓒ LUMOS CANDLE. All rights reserved.</p>
                 </div>
 
                 <div class="footer-links">
@@ -88,7 +88,6 @@
             nav.classList.toggle('active');
         });
 
-        // [추가됨] 메뉴 항목 클릭 시 메뉴 닫기
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
